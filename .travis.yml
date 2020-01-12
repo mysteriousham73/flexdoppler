@@ -8,14 +8,15 @@ addons:
     - xvfb
     - xauth
     - libgtk-3-0
-    - wine
+    - #wine
 install:
-- python3 get-pip.py
-- pip3 install --upgrade setuptools wheel
-- pip3 install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04
-  wxPython
-- pip3 install --upgrade -r requirements.txt
-- wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi
+#- python3 get-pip.py
+#- pip3 install --upgrade setuptools wheel
+#- pip3 install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04
+#  wxPython
+#- pip3 install --upgrade -r requirements.txt
+-
+#- wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi
 #- wine msiexec /i python-2.7.9.amd64.msi /qb
 #- cd ~/.wine/drive_c/Python27
 - bash travis/install_python.sh

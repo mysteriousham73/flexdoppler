@@ -15,7 +15,8 @@ install:
 - pip3 install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04
   wxPython
 - pip3 install --upgrade -r requirements.txt
-- wine https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe /quiet /TargetDir=c:\python
+- wget https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe
+- wine python-3.6.8-amd64.exe /quiet /TargetDir=c:\python
 - wine dir c:
 script:
 - pyinstaller --onefile source/flexdoppler.py

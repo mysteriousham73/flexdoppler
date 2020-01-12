@@ -6,13 +6,8 @@ python:
  # - "3.8-dev"  # 3.8 development branch
 #  - "nightly"  # nightly build
 # command to install dependencies
-
-addons:
-    apt:
-        packages:
-            - xvfb
-            - xauth
-            - libgtk-3-0
+os:
+  -windows
 
 install:
   - python3 get-pip.py

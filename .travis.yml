@@ -17,6 +17,8 @@ install:
 - 
 script:
 - pyinstaller --onefile source/flexdoppler.py
+- ls
+- ls dist
 deploy:
   provider: releases
   api_key:

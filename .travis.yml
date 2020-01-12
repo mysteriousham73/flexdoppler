@@ -20,7 +20,7 @@ install:
   - pip3 install --upgrade setuptools wheel
   #- pip3 --version
  # - sudo apt-get install -y libgtk-3-dev
-  - pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 \
+  - pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04
   - pip3 install --upgrade -r requirements.txt
   -
 # command to run tests

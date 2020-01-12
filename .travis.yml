@@ -16,8 +16,10 @@ install:
   wxPython
 - pip3 install --upgrade -r requirements.txt
 - wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi
-- wine msiexec /i python-2.7.9.amd64.msi /qb
-- cd ~/.wine/drive_c/Python27
+#- wine msiexec /i python-2.7.9.amd64.msi /qb
+#- cd ~/.wine/drive_c/Python27
+- cd ~/.wine/drive_c/
+- ls
 - wine python.exe Scripts/pip.exe install pyinstaller
 script:
 - cd /home/travis/build/mysteriousham73/flexdoppler

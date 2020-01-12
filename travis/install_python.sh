@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-source travis_retry.sh
+source travis/travis_retry.sh
 echo "---------------------------------"
 echo "-------- setup wine prefix ------"
 echo "---------------------------------"

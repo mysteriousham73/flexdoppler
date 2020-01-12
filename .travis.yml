@@ -1,8 +1,5 @@
 language: python
 python:
-  - "2.7"
-  - "3.4"
-  - "3.5"
   - "3.6"      # current default Python on Travis CI
   - "3.7"
   - "3.8"
@@ -10,9 +7,9 @@ python:
   - "nightly"  # nightly build
 # command to install dependencies
 install:
-  - python get-pip.py
-  - pip install --upgrade pip setuptools wheel
-  - pip install -r requirements.txt
+  - python3 get-pip.py
+  - pip3 install --upgrade pip setuptools wheel
+  - pip3 install -r requirements.txt
 # command to run tests
 script:
-  - python flexdoppler.py
+  - python3 flexdoppler.py

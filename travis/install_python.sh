@@ -12,9 +12,9 @@ echo "---------------------------------"
 
 # see: https://appdb.winehq.org/objectManager.php?sClass=version&iId=38187
 
-echo "------ Installing required apt packages ------"
-apt update
-apt install -y wget gnupg software-properties-common apt-utils
+#echo "------ Installing required apt packages ------"
+#apt update
+#apt install -y wget gnupg software-properties-common apt-utils
 
 echo "------ Add latest wine repo ------"
 # Need at least wine 4.14 to install python 3.7

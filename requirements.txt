@@ -16,6 +16,7 @@ pyasn1-modules==0.2.7
 pycparser==2.19
 PyHamcrest>=1.9.0
 PyInstaller>=3.6
+gtk+>=3.0
 pyOpenSSL==19.1.0
 pywin32-ctypes==0.2.0
 service-identity==18.1.0

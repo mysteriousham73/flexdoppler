@@ -16,7 +16,7 @@ install:
   wxPython
 - pip3 install --upgrade -r requirements.txt
 - wget https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe
-- wine python-3.6.8-amd64.exe /quiet /TargetDir=c:\python
+- wine /c python-3.6.8-amd64.exe /TargetDir=c:\python
 - wine dir c:
 script:
 - pyinstaller --onefile source/flexdoppler.py

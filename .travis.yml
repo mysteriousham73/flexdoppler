@@ -10,6 +10,7 @@ python:
   - "nightly"  # nightly build
 # command to install dependencies
 install:
+  - python -m pip install –upgrade pip
   - pip install -r requirements.txt
 # command to run tests
 script:

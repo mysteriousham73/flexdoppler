@@ -21,8 +21,8 @@ install:
 - cd ~/.wine/drive_c/Python27
 - wine python.exe Scripts/pip.exe install pyinstaller
 script:
-- wine ~/.wine/drive_c/Python27/Scripts/pyinstaller.exe --onefile helloworld.py
-- pyinstaller --onefile source/flexdoppler.py
+- wine ~/.wine/drive_c/Python27/Scripts/pyinstaller.exe --onefile flexdoppler.py
+- pyinstaller --onefile /home/travis/source/flexdoppler.py
 - ls
 - ls dist
 

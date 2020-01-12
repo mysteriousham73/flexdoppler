@@ -7,7 +7,13 @@ python:
 #  - "nightly"  # nightly build
 # command to install dependencies
 os:
-  -windows
+  -linux
+addons:
+    apt:
+        packages:
+            - xvfb
+            - xauth
+            - libgtk-3-0
 
 install:
   - python3 get-pip.py

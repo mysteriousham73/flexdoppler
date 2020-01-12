@@ -1,8 +1,8 @@
 language: python
 python:
   #- "3.6"      # current default Python on Travis CI
-  #- "3.7"
-  - "3.8"
+  - "3.7"
+  #- "3.8"
  # - "3.8-dev"  # 3.8 development branch
 #  - "nightly"  # nightly build
 # command to install dependencies
@@ -20,7 +20,9 @@ install:
   - pip3 install --upgrade setuptools wheel
   #- pip3 --version
   - sudo apt-get install -y libgtk-3-dev
-  - pip3 install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 wxPython
+  #- wget "https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04/wxPython-4.0.0b1-cp35-cp35m-linux_x86_64.whl"
+  #- pip install wxPython-4.0.0b1-cp35-cp35m-linux_x86_64.whl
+  - pip3 install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 4.0.7.post2
   - pip3 install --upgrade -r requirements.txt
   -
 # command to run tests

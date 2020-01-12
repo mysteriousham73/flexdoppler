@@ -1,30 +1,26 @@
 language: python
 python:
-  #- "3.6"      # current default Python on Travis CI
-  - "3.7"
-  #- "3.8"
- # - "3.8-dev"  # 3.8 development branch
-#  - "nightly"  # nightly build
-# command to install dependencies
-os:
-  -linux
+- '3.7'
+os: "-linux"
 addons:
-    apt:
-        packages:
-            - xvfb
-            - xauth
-            - libgtk-3-0
-
+  apt:
+    packages:
+    - xvfb
+    - xauth
+    - libgtk-3-0
 install:
-  - python3 get-pip.py
-  - pip3 install --upgrade setuptools wheel
-  #- pip3 --version
-  #- sudo apt-get install -y libgtk-3-dev
-  #- wget "https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04/wxPython-4.0.0b1-cp35-cp35m-linux_x86_64.whl"
-  #- pip install wxPython-4.0.0b1-cp35-cp35m-linux_x86_64.whl
-  - pip3 install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 wxPython
-  - pip3 install --upgrade -r requirements.txt
-  -
-# command to run tests
+- python3 get-pip.py
+- pip3 install --upgrade setuptools wheel
+- pip3 install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04
+  wxPython
+- pip3 install --upgrade -r requirements.txt
+- 
 script:
-  - pyinstaller --onefile source/flexdoppler.py
+- pyinstaller --onefile source/flexdoppler.py
+deploy:
+  provider: releases
+  api_key:
+    secure: nfqZsJoc1SZfooO9657cDezp42aGUfwydrfpwZaJefra1aW4eCcFGS8nfOlvJl8GZOtzlIrmGLuGZGyiTOwozzFgz3PWAOn8/KqgOvNUDsWOFXKgV/K59bfPiabOikHd9gTpJ0pizdFfLzTpf+lwVbBF27z3gnBkUSyZgAxrdu4nu9gip+fgBZOSPJKvfhZTCuyeNGL4kXWujRMFfTS2E9puQ+my2H+SugTrLRiNFiUbpEn8NnmIONbudaKHbgHiAPOI06PDISE0gTDzfoSI3fr13CzAGj2u3F9Bj/4yAcgkuu7Zc96jjpAqxvRxO3pZgdgV07fQ88+0Dbcxz/iGukPlxP1JiwF+BYmEBGX9/TNPEs2eRNHGzrK+GxFwl5RKM/1kfrUy8FDynWThYfYYJfJt5chkC63sxtVzxE+fOMpRGr4FQu4ow2rSvMTnY3zU5KZxcx4PilG/AI/TI0EuTape/jUVZTadXNWNQf8rfzxrwX1urGQ6kvoRxucT8stQtkQgBFcJu+GT30++C2/IkWOuF3l7giriQcog+YsJ78DOAeY/Cser4BxKV8B4XidpGJgDtr/8hKw3gkr7zhWlPqZBhzmK/sOuAQu1irfE08e8RQuvzxiOgOzSaj018gcootoPt242/zuoUExBDFu/TDGR++tk2ioCTFTJ14mfGvY=
+  file: dist/flexdoppler
+  on:
+    repo: mysteriousham73/flexdoppler

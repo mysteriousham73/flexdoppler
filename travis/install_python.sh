@@ -18,7 +18,7 @@ echo "---------------------------------"
 
 echo "------ Add latest wine repo ------"
 # Need at least wine 4.14 to install python 3.7
-bash travis/travis_retry.sh sudo dpkg --add-architecture i386
+#bash travis/travis_retry.sh sudo dpkg --add-architecture i386
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 bash travis/travis_retry.sh sudo apt-key add winehq.key
 bash travis/travis_retry.sh sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'

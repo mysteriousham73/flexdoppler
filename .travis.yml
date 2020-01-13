@@ -9,7 +9,7 @@ branches:
 matrix:
   include:
     - os: osx
-      python: 3.7
+      python: 3.8
       before_install:
         - python get-pip.py
         - pip install --upgrade setuptools wheel

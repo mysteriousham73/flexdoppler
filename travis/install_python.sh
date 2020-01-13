@@ -43,7 +43,7 @@ WINEPREFIX=~/.wine64 WINARCH=win64 winetricks \
 # Setup dummy screen
 echo "------ Setup Dummy Screen ------"
 sudo Xvfb :0 -screen 0 1024x768x16 &
-sudo jid=$!
+jid=$!
 
 echo "------ Install python ------"
 DISPLAY=:0.0 WINEPREFIX=~/.wine64 wine cmd /c \

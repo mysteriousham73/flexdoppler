@@ -6,19 +6,19 @@ matrix:
     - os: windows
       language: sh
       before_install:
-        #- setx path "%path%;c:\users\travis\.pyenv\pyenv-win\versions\3.7.1\Scripts"
+
         - git clone https://github.com/pyenv-win/pyenv-win.git $HOME/.pyenv
-        - export PATH="$HOME/.pyenv/pyenv-win/versions\3.7.1\Scripts:$HOME/.pyenv/pyenv-win/bin:$HOME/.pyenv/pyenv-win/shims:$PATH"
+        - export PATH="$HOME/.pyenv/pyenv-win/bin:$HOME/.pyenv/pyenv-win/shims:$PATH"
         - pyenv install -q 3.7.1
         - pyenv global 3.7.1
         - pyenv rehash
         - pyenv local 3.7.1
         - python --version
         - python -m pip install --upgrade pip
-        #- setx path "%path%;c:\users\travis\.pyenv\pyenv-win\versions\3.7.1\Scripts"
         - pip install --upgrade setuptools wheel
         - pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 wxPython
         - pip install --upgrade -r requirements.txt
+        - export PATH="$HOME/.pyenv/pyenv-win/versions\3.7.1\Scripts:$PATH"
 
     - os: linux
       python: 3.7

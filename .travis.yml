@@ -13,9 +13,7 @@ addons:
     - libgtk-3-0
     - #wine
 before_install:
-  - export DISPLAY=:99.0
-  - sudo sh -e /etc/init.d/xvfb start
-  - sleep 3 # give xvfb some time to start
+
 install:
 #- python3 get-pip.py
 #- pip3 install --upgrade setuptools wheel
@@ -26,6 +24,9 @@ install:
 #- wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi
 #- wine msiexec /i python-2.7.9.amd64.msi /qb
 #- cd ~/.wine/drive_c/Python27
+- export DISPLAY=:99.0
+- sudo sh -e /etc/init.d/xvfb start
+- sleep 3 # give xvfb some time to start
 - bash travis/install_python.sh
 -
 - cd ~/.wine/drive_c/

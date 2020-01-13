@@ -15,6 +15,7 @@ matrix:
         - pyenv local 3.7.1
         - python --version
         - python -m pip install --upgrade pip
+        - setx path "%path%;c:\users\travis\.pyenv\pyenv-win\versions\3.7.1\Scripts"
         - pip install --upgrade setuptools wheel
         - pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 wxPython
         - pip install --upgrade -r requirements.txt

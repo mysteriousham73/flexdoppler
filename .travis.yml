@@ -12,7 +12,7 @@ matrix:
         - pyenv rehash
         - pyenv local 3.7.1
         - python --version
-        - python get-pip.py
+        - #python get-pip.py
         - pip install --upgrade setuptools wheel
         - pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 wxPython
         - pip install --upgrade -r requirements.txt
@@ -25,7 +25,7 @@ matrix:
         - pip install --upgrade -r requirements.txt
 
 script:
-  - "PYTHONPATH=. python -m pytest -v -s --cov=shconfparser tests"
+  - #"PYTHONPATH=. python -m pytest -v -s --cov=shconfparser tests"
 
 #after_success:
 #  - coveralls

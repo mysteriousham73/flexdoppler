@@ -1,20 +1,7 @@
 #!/bin/bash
 
 set -e
-source travis/travis_retry.sh
-echo "---------------------------------"
-echo "-------- setup wine prefix ------"
-echo "---------------------------------"
-# We need the developer version of wine.  We need at least version 4.14 (see link).
-# This is the earliest version I've seen reported to work with python3 well
-# Without this, we'd have to run the embedded install of python which is riddled
-# with annoying issues.
 
-# see: https://appdb.winehq.org/objectManager.php?sClass=version&iId=38187
-
-#echo "------ Installing required apt packages ------"
-#apt update
-#apt install -y wget gnupg software-properties-common apt-utils
 
 echo "------ Add latest wine repo ------"
 # Need at least wine 4.14 to install python 3.7
@@ -41,13 +28,13 @@ WINEPREFIX=~/.wine64 WINARCH=win64 winetricks \
    # win10
 
 # Setup dummy screen
-echo "------ Setup Dummy Screen ------"
+#echo "------ Setup Dummy Screen ------"
 #sudo Xvfb :0 -screen 0 1024x768x16 &
 #jid=$!
 
 echo "------ Install python ------"
 #export DISPLAY=:0.0
-xvfb-run WINEPREFIX=~/.wine64 wine cmd /c python-3.6.8-amd64.exe /quiet PrependPath=1
+#xvfb-run WINEPREFIX=~/.wine64 wine cmd /c python-3.6.8-amd64.exe /quiet PrependPath=1
 echo "Python Installation complete!"
 # Display=:0.0 redirects wine graphical output to the dummy display.
 # This is to avoid docker errors as the python installer requires a display,

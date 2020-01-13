@@ -8,7 +8,7 @@ echo "------ Add latest wine repo ------"
 #bash travis/travis_retry.sh sudo dpkg --add-architecture i386
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
-sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main'
+sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ disco main'
 sudo apt update
 
 # Add repo for faudio package.  Required for winedev

@@ -30,7 +30,7 @@ matrix:
 
 
 script:
-  - "PYTHONPATH=. pyinstaller --onefile source/flexdoppler.py"
+  - "PYTHONPATH=c:\users\travis\.pyenv\pyenv-win\versions\3.7.1\Scripts pyinstaller --onefile source/flexdoppler.py"
 
 #after_success:
 #  - coveralls

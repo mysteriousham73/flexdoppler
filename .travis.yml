@@ -23,7 +23,7 @@ install:
 #- wine msiexec /i python-2.7.9.amd64.msi /qb
 #- cd ~/.wine/drive_c/Python27
 - bash travis/install_python.sh
-- WINEPREFIX=~/.wine64 wine cmd /c python-3.6.8-amd64.exe /quiet PrependPath=1
+-
 - cd ~/.wine/drive_c/
 - ls
 - wine python.exe Scripts/pip.exe install pyinstaller

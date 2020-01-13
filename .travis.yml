@@ -4,11 +4,11 @@ python:
 - '3.7'
 os: "linux"
 services:
-#  - xvfb
+  - xvfb
 addons:
   apt:
     packages:
-    - xvfb
+#    - xvfb
     - xauth
     - libgtk-3-0
     - #wine
@@ -24,9 +24,6 @@ install:
 #- wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi
 #- wine msiexec /i python-2.7.9.amd64.msi /qb
 #- cd ~/.wine/drive_c/Python27
-- export DISPLAY=:99.0
-- sudo sh -e /etc/init.d/xvfb start
-- sleep 3 # give xvfb some time to start
 - bash travis/install_python.sh
 -
 - cd ~/.wine/drive_c/

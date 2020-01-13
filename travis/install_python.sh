@@ -20,12 +20,12 @@ echo "------ Add latest wine repo ------"
 # Need at least wine 4.14 to install python 3.7
 #bash travis/travis_retry.sh sudo dpkg --add-architecture i386
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
-bash travis/travis_retry.sh sudo apt-key add winehq.key
-bash travis/travis_retry.sh sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main'
-bash travis/travis_retry.sh sudo apt update
+sudo apt-key add winehq.key
+sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main'
+sudo apt update
 
 # Add repo for faudio package.  Required for winedev
-bash travis/travis_retry.sh sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport
+sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport
 
 echo "-------- Install wine-dev ------"
 

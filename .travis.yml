@@ -12,7 +12,7 @@ addons:
     - xvfb
     - xauth
     - libgtk-3-0
-    - wine
+    - wine-dev
 before_install:
 
 install:

@@ -18,6 +18,13 @@ matrix:
         - pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 wxPython
         - pip install --upgrade -r requirements.txt
         - export PATH="$HOME/.pyenv/pyenv-win/versions/3.7.1/Scripts:$PATH"
+      before_deploy:
+        # Set up git user name and tag this commit
+        - dir
+        - git config --local user.name "mysteriousham73"
+        - git config --local user.email "mysteriousham73@gmail.com"
+        - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+        - git tag $TRAVIS_TAG
     - os: linux
       python: 3.7
       before_install:
@@ -25,6 +32,12 @@ matrix:
         - pip install --upgrade setuptools wheel
         - pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 wxPython
         - pip install --upgrade -r requirements.txt
+      before_deploy:
+        # Set up git user name and tag this commit
+        - git config --local user.name "mysteriousham73"
+        - git config --local user.email "mysteriousham73@gmail.com"
+        - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+        - git tag $TRAVIS_TAG
 
 
 script:
@@ -33,12 +46,7 @@ script:
 #after_success:
 #  - coveralls
 
-before_deploy:
-      # Set up git user name and tag this commit
-      - git config --local user.name "mysteriousham73"
-      - git config --local user.email "mysteriousham73@gmail.com"
-      - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-      - git tag $TRAVIS_TAG
+
 deploy:
   skip_cleanup: true
   file_glob: true

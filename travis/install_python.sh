@@ -23,7 +23,7 @@ wget https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe
 #wget https://www.python.org/ftp/python/3.7.6/python-3.7.6.exe
 
 echo "------ Init wine prefix ------"
-#WINEPREFIX=~/.wine64 WINARCH=win64 winetricks corefonts
+WINEPREFIX=~/.wine64 WINARCH=win64 winetricks corefonts
    # win10
 
 # Setup dummy screen

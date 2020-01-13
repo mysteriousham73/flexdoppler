@@ -29,7 +29,7 @@ bash travis/travis_retry.sh sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-
 
 echo "-------- Install wine-dev ------"
 
-bash sudo apt install -y winehq-devel winetricks
+bash sudo apt-get install -y winehq-devel winetricks
 
 echo "------ Download python ------"
 wget https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe

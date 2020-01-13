@@ -5,14 +5,14 @@ python:
 os: "linux"
 dist: bionic
 services:
-  - xvfb
+  #- xvfb
 addons:
   apt:
     packages:
-#    - xvfb
+    - xvfb
     - xauth
     - libgtk-3-0
-    - #wine
+    - wine
 before_install:
 
 install:
@@ -26,7 +26,7 @@ install:
 #- wine msiexec /i python-2.7.9.amd64.msi /qb
 #- cd ~/.wine/drive_c/Python27
 - bash travis/install_python.sh
--
+- wine cmd /c python-3.6.8-amd64.exe PrependPath=1
 - cd ~/.wine/drive_c/
 - ls
 - wine python.exe Scripts/pip.exe install pyinstaller

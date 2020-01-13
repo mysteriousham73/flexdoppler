@@ -9,8 +9,8 @@ branches:
 matrix:
   include:
     - os: osx
-        language: sh
-        before_install:
+    - language: sh
+    - before_install:
           - git clone https://github.com/pyenv-win/pyenv-win.git $HOME/.pyenv
           - export PATH="$HOME/.pyenv/pyenv-win/bin:$HOME/.pyenv/pyenv-win/shims:$PATH"
           - pyenv install -q 3.7.1

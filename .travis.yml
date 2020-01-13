@@ -27,7 +27,7 @@ matrix:
         # Set up git user name and tag this commit
         - git config --local user.name "mysteriousham73"
         - git config --local user.email "mysteriousham73@gmail.com"
-        - export TRAVIS_TAG="Windows"
+        - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
         - git tag $TRAVIS_TAG
       deploy:
         skip_cleanup: true
@@ -53,7 +53,7 @@ matrix:
         # Set up git user name and tag this commit
         - git config --local user.name "mysteriousham73"
         - git config --local user.email "mysteriousham73@gmail.com"
-        - export TRAVIS_TAG="Linux"
+        - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
         - git tag $TRAVIS_TAG
       deploy:
         skip_cleanup: true

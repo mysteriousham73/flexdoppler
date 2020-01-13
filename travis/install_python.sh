@@ -38,7 +38,7 @@ wget https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe
 echo "------ Init wine prefix ------"
 WINEPREFIX=~/.wine64 WINARCH=win64 winetricks \
     corefonts \
-    win10
+   # win10
 
 # Setup dummy screen
 Xvfb :0 -screen 0 1024x768x16 &

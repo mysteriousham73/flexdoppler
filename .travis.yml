@@ -3,7 +3,7 @@ language: python
 python:
 - '3.7'
 os: "linux"
-dist: disco
+dist: bionic
 services:
   #- xvfb
 addons:
